@@ -18,6 +18,14 @@ export default function Header() {
           >
             <Link href="/about">About me</Link>
           </Button>
+           <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="bg-black text-white hover:bg-transparent hover:text-white font-medium"
+          >
+            <Link href="/blog">Blog</Link>
+          </Button>
           <Button
             asChild
             size="lg"

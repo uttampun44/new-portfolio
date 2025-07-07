@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "@components/header";
+import Footer from "@components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Uttam Pun",
@@ -26,10 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
+        className={`${roboto.className} antialiased bg-black bg-[url('/assets/images/BackgroundPattern.png')] bg-auto bg-top-right bg-no-repeat h-screen w-full`}
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

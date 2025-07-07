@@ -14,6 +14,9 @@ bun dev
 ```
 
 ## docker started
+
+you need to have docker installed
+
 first, build the image
 
 ```bash
