@@ -20,10 +20,10 @@
     ],
     "paths": {
       "@components/*": ["./app/components/*"],
-      "@image/*": ["/public/assets/images/*"],
+     "@image/*": ["./public/assets/images/*"],
       "@data/*": ["./app/data/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "fileTransformer.js", "__mocks__/fileMock.ts"],
   "exclude": ["node_modules"]
 }

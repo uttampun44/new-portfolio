@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="about-container max-w-[1168.1px] mx-auto">
+    <div data-test-id="about-container" className="about-container max-w-[1168.1px] mx-auto">
       <h1 className="text-4xl font-bold">About me</h1>
       <p className="text-lg">
         I am a Full Stack Developer, Frontend Developer and Backend Developer.

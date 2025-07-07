@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="px-4 py-12">
-      <div className="hero-container max-w-[979px] mx-auto w-full">
+      <div data-test-id="hero-container" className="hero-container max-w-[979px] mx-auto w-full">
         <div className="hero-grid grid grid-cols-1 justify-items-center gap-6 items-center text-center">
           <div className="hero-image">
             <Image

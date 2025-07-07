@@ -4,7 +4,7 @@ import { Card, CardContent } from "@components/ui/card";
 export default function Projects() {
   return (
     <section>
-      <div className="about-container max-w-[979px] mx-auto pb-24 w-full">
+      <div data-test-id="projects-container" className="project-container max-w-[979px] mx-auto pb-24 w-full">
         <div className="about-grid text-center grid grid-cols-1 justify-items-center items-center">
           <h1 className="text-white text-center uppercase font-bold text-4xl sm:text-5xl md:text-6xl">
             Projects

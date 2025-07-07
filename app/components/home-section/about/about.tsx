@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section className="my-24">
-      <div className="about-container max-w-[979px] mx-auto pb-24 w-full">
+      <div data-test-id="about-container" className="about-container max-w-[979px] mx-auto pb-24 w-full">
         <div className="about-grid text-center grid grid-cols-1 justify-items-center items-center">
           <h1 className="text-white text-center uppercase font-bold text-4xl sm:text-5xl md:text-6xl">
             About Me
