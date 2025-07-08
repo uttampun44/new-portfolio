@@ -1,5 +1,6 @@
 import { projectsData } from "@data/projectsData";
 import { Card, CardContent } from "@components/ui/card";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -16,7 +17,11 @@ export default function Projects() {
 
         <div className="projectsGrid grid md:grid-cols-2 gap-4 mt-14">
           {projectsData.map((project, index) => (
-            <Card
+            <Link
+              key={index}
+              href={project.link}
+              className="project-card">
+                <Card
               key={index}
               className="border-none"
             >
@@ -30,6 +35,7 @@ export default function Projects() {
                  </div>
               </CardContent>
               </Card>
+              </Link>
           ))}
         </div>
       </div>
