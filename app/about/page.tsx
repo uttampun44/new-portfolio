@@ -3,7 +3,7 @@ import HeroImage from "@image/Me.png";
 
 export default function About() {
   return (
-    <section className="min-h-screen flex items-center justify-center text-white px-4">
+    <div className="min-h-screen flex items-center justify-center text-white px-4">
       <div className="max-w-3xl w-full text-center space-y-8">
         <div>
           <h1 className="text-5xl font-bold">ABOUT ME</h1>
@@ -42,6 +42,6 @@ export default function About() {
           </a>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

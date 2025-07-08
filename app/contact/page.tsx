@@ -1,10 +1,11 @@
-
+   "use client";
 import { Button } from "@components/ui/button";
 import { Input } from "@components/ui/input";
 import { Textarea } from "@components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
-
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactFormSchema } from "./types/contactSchema";
 
 type tContactFormType = {
   name: string;
@@ -16,7 +17,7 @@ export default function Contact() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<tContactFormType>();
+  } = useForm<tContactFormType>({resolver: zodResolver(contactFormSchema)});
 
   const notify = () => toast("Message sent successfully!");
   const onSubmit = (data: tContactFormType) => {
@@ -24,7 +25,7 @@ export default function Contact() {
     notify();
   };
   return (
-    <section className="min-h-screen flex items-center justify-center text-white px-4">
+    <div className="min-h-screen flex items-center justify-center text-white px-4">
       <div className="max-w-xl w-full space-y-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold">Contact Me</h1>
@@ -84,6 +85,6 @@ export default function Contact() {
           <ToastContainer />
         </form>
       </div>
-    </section>
+    </div>
   );
 }
