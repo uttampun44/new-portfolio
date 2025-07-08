@@ -6,9 +6,8 @@ export default function Footer() {
      <footer>
        <div className="container max-w-[979px] mx-auto py-8">
            <div className="icon-row flex justify-center items-center gap-4">
-              <Link href=""><Github className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
-              <Link href=""><Linkedin className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
-              <Link href="" ><Facebook className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
+              <Link href="https://github.com/uttampun44/"><Github className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
+              <Link href="https://www.linkedin.com/notifications/?filter=all"><Linkedin className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
            </div>
        </div>
        <div className="copyrights boder-2 border-[#E1E1E1] border-t-[1px] w-full">
