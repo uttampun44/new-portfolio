@@ -4,7 +4,7 @@ import { workData } from "@data/workData";
 export default function Experience() {
   return (
     <section className="py-24 px-4">
-      <div className="max-w-[979px] mx-auto w-full text-center">
+      <div className="about-container max-w-[979px] mx-auto w-full text-center">
      
         <h1 className="text-white uppercase font-bold text-4xl sm:text-5xl md:text-6xl mb-2">
           Experience

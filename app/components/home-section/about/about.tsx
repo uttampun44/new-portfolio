@@ -3,7 +3,7 @@ export default function About() {
     <section className="py-24 px-4">
       <div
         data-test-id="about-container"
-        className="max-w-[979px] mx-auto text-center"
+        className="about-container max-w-[979px] mx-auto text-center"
       >
         <h1 className="text-white uppercase font-bold text-4xl sm:text-5xl md:text-6xl mb-4">
           About Me

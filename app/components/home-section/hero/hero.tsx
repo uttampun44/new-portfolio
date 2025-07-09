@@ -8,12 +8,12 @@ export default function Hero() {
     <section className="px-4 py-16">
       <div
         data-test-id="hero-container"
-        className="max-w-[979px] mx-auto w-full text-center grid gap-8"
+        className="hero-container max-w-[979px] mx-auto w-full text-center grid gap-8"
       >
         <div className="mx-auto">
           <Image
             src={HeroImage}
-            alt="Uttam Pun"
+            alt="hero_image"
             width={231}
             height={231}
             loading="lazy"

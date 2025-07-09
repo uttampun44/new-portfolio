@@ -7,7 +7,7 @@ export default function Projects() {
     <section className="py-24 px-4">
       <div
         data-test-id="projects-container"
-        className="max-w-[979px] mx-auto w-full"
+        className="project-container max-w-[979px] mx-auto w-full"
       >
         <div className="text-center">
           <h1 className="text-white uppercase font-bold text-4xl sm:text-5xl md:text-6xl mb-2">
