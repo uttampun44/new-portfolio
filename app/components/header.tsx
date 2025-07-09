@@ -3,13 +3,14 @@ import { Button } from "./ui/button";
 
 export default function Header() {
   return (
-    <header className="px-4 py-6">
-      <div className="header-container max-w-[1168px] mx-auto flex flex-wrap justify-between items-center gap-y-4">
-        <div className="title text-white text-xl sm:text-2xl font-bold w-full sm:w-auto text-center sm:text-left">
-          <h1><Link href="/">Uttam Pun</Link></h1>
+    <header className="px-4 py-6 ">
+      <div className="max-w-[1168px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+        <div className="text-white text-2xl font-bold text-center sm:text-left w-full sm:w-auto">
+          <Link href="/">Uttam Pun</Link>
         </div>
 
-        <div className="buttonRow flex gap-x-4 w-full sm:w-auto justify-center sm:justify-end">
+        <div className="flex flex-wrap justify-center sm:justify-end gap-3">
           <Button
             asChild
             size="lg"
@@ -18,12 +19,12 @@ export default function Header() {
           >
             <Link href="/about">About me</Link>
           </Button>
-         
+
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="font-medium text-black bg-white hover:bg-gray-200"
+            className="text-black bg-white hover:bg-gray-200 font-medium"
           >
             <Link href="/contact">Contact</Link>
           </Button>

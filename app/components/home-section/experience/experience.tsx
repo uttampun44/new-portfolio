@@ -3,30 +3,27 @@ import { workData } from "@data/workData";
 
 export default function Experience() {
   return (
-    <section className="my-24">
-      <div className="experience-container max-w-[979px] mx-auto pb-24 w-full">
-        <div className="about-grid text-center grid grid-cols-1 justify-items-center items-center">
-          <h1 className="text-white text-center uppercase font-bold text-4xl sm:text-5xl md:text-6xl">
-            Experience
-          </h1>
-          <p className="bg-gradient-to-r from-[#C11E1E] to-[#C9C9C9] bg-clip-text text-transparent uppercase">
-            Explore Now.
-          </p>
+    <section className="py-24 px-4">
+      <div className="max-w-[979px] mx-auto w-full text-center">
+     
+        <h1 className="text-white uppercase font-bold text-4xl sm:text-5xl md:text-6xl mb-2">
+          Experience
+        </h1>
+        <p className="bg-gradient-to-r from-[#C11E1E] to-[#C9C9C9] bg-clip-text text-transparent uppercase mb-10 text-base sm:text-lg">
+          Explore Now.
+        </p>
 
-          <div className="experience-row">
-           {
-              workData.map((work, index) => (
-                <WorkExperience
-                  key={index}
-                  title={work.title}
-                  date={work.date}
-                  descriptionOne={work.descriptionOne}
-                  descriptionTwo={work.descriptionTwo}
-                  technologies={work.techonologies} 
-                />
-              ))
-           }
-          </div>
+        <div className="grid gap-10">
+          {workData.map((work, index) => (
+            <WorkExperience
+              key={index}
+              title={work.title}
+              date={work.date}
+              descriptionOne={work.descriptionOne}
+              descriptionTwo={work.descriptionTwo}
+              technologies={work.techonologies}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -1,20 +1,37 @@
-import { Facebook, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-     <footer>
-       <div className="container max-w-[979px] mx-auto py-8">
-           <div className="icon-row flex justify-center items-center gap-4">
-              <Link href="https://github.com/uttampun44/"><Github className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
-              <Link href="https://www.linkedin.com/notifications/?filter=all"><Linkedin className="icon" size={24} style={{color: "#E1E1E1"}} /></Link>
-           </div>
-       </div>
-       <div className="copyrights boder-2 border-[#E1E1E1] border-t-[1px] w-full">
-          <div className="text-copyrights text-white text-center py-4 font-normal text-sm">
-            Copyright © 2023 Uttam Pun. All rights reserved.
-          </div>
-       </div>
-     </footer>
-  )
+    <footer className=" text-white">
+    
+      <div className="container max-w-[979px] mx-auto px-4 py-8">
+        <div className="flex justify-center items-center gap-6">
+          <Link
+            href="https://github.com/uttampun44/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <Github size={24} className="text-gray-300 hover:text-white transition-colors" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/uttampun/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={24} className="text-gray-300 hover:text-white transition-colors" />
+          </Link>
+        </div>
+      </div>
+
+    
+      <div className="border-t border-gray-700">
+        <div className="text-center py-4 text-sm font-normal text-gray-400">
+          © {new Date().getFullYear()} Uttam Pun. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 }
