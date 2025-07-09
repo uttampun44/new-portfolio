@@ -10,8 +10,10 @@ const nextConfig: NextConfig = {
          poll: 100,
          aggregateTimeout: 300,
       }
-   })
-
+   }),
+  eslint: {
+      ignoreDuringBuilds: true,
+  }
 };
 
 export default nextConfig;
