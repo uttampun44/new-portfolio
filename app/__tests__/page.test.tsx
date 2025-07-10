@@ -1,10 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render} from '@testing-library/react';
 import Hero from '@components/home-section/hero/hero';
 import About from '@components/home-section/about/about';
-import Experience from '@components/home-section/experience/experience';
 import Projects from '@components/home-section/projects/projects';
-import { workData } from '@data/workData';
 
 
 describe('page', () => {
