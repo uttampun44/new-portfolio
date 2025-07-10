@@ -4,11 +4,11 @@ import WorkExperience from "@components/workexperience";
 import { workData } from "@data/workData";
 import { motion } from "framer-motion";
 
-export default function Experience() {
+export default function ExperienceSection() {
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4" data-testid="experience-section">
       <motion.div
-        className="about-container max-w-[979px] mx-auto w-full text-center"
+        className="experience-container max-w-[979px] mx-auto w-full text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
       >
@@ -19,7 +19,7 @@ export default function Experience() {
           Explore Now.
         </p>
 
-        <div className="grid gap-10">
+        <div className="grid gap-10" data-testid="experience-list">
           {workData.map((work, index) => (
             <WorkExperience
               key={index}
