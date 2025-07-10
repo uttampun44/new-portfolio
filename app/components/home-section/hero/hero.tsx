@@ -1,7 +1,9 @@
+  "use client";
 import Image from "next/image";
 import HeroImage from "@image/Me.png";
 import { Button } from "@components/ui/button";
 import Link from "next/link";
+import {motion} from "framer-motion"; 
 
 export default function Hero() {
   return (
@@ -10,7 +12,11 @@ export default function Hero() {
         data-test-id="hero-container"
         className="hero-container max-w-[979px] mx-auto w-full text-center grid gap-8"
       >
-        <div className="mx-auto">
+        <motion.div 
+        className="mx-auto"
+         animate={{ rotate: 360 }}
+         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        >
           <Image
             src={HeroImage}
             alt="hero_image"
@@ -20,7 +26,7 @@ export default function Hero() {
             quality={100}
             className="rounded-full w-[150px] sm:w-[180px] md:w-[231px] h-auto mx-auto border border-[#585858]"
           />
-        </div>
+        </motion.div>
 
         <div className="text-[#E1E1E1] space-y-3">
           <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-6xl">

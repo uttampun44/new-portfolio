@@ -1,11 +1,17 @@
+"use client";
+
 import WorkExperience from "@components/workexperience";
 import { workData } from "@data/workData";
+import { motion } from "framer-motion";
 
 export default function Experience() {
   return (
     <section className="py-24 px-4">
-      <div className="about-container max-w-[979px] mx-auto w-full text-center">
-     
+      <motion.div
+        className="about-container max-w-[979px] mx-auto w-full text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      >
         <h1 className="text-white uppercase font-bold text-4xl sm:text-5xl md:text-6xl mb-2">
           Experience
         </h1>
@@ -25,7 +31,7 @@ export default function Experience() {
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
