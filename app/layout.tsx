@@ -3,6 +3,7 @@ import {Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@components/header";
 import Footer from "@components/footer";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -26,6 +27,8 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <GoogleAnalytics gaId="G-FLB2Y48Q0F"/>
+        <GoogleTagManager gtmId="GTM-PHP6578"/>
         <Footer />
       </body>
     </html>

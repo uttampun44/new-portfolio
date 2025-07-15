@@ -25,6 +25,6 @@
       "@appwrite/*": ["./app/appwrite.ts"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "fileTransformer.js", "__mocks__/fileMock.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "fileTransformer.js", "__mocks__/fileMock.ts", "public/firebase-messaging-sw.js"],
   "exclude": ["node_modules"]
 }
