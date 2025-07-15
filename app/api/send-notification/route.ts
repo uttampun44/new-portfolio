@@ -1,1 +1,1 @@
-"user server"
+"use server"
