@@ -15,7 +15,7 @@ export default function Footer() {
             <Github size={24} className="text-gray-300 hover:text-white transition-colors" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/uttampun/"
+            href="https://www.linkedin.com/in/uttam-pun-35a533194/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
