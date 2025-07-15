@@ -24,7 +24,7 @@ export default function Contact() {
   const notify = () => toast("Message sent successfully!");
   const onSubmit = async(data: tContactFormType) => {
     if(data.email && data.name && data.message) {
-       await account.create(ID.unique(), data.email, data.name, data.message as string);
+       await account.create(ID.unique(), data.email, data.name, data.message);
        notify();
        reset();
     }
