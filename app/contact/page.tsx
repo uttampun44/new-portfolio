@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema } from "./types/contactSchema";
+import { account, ID } from "@appwrite/appwrite";
 
 type tContactFormType = {
   name: string;
@@ -17,12 +18,16 @@ export default function Contact() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<tContactFormType>({resolver: zodResolver(contactFormSchema)});
-
+  
   const notify = () => toast("Message sent successfully!");
-  const onSubmit = (data: tContactFormType) => {
-    console.log(data);
-    notify();
+  const onSubmit = async(data: tContactFormType) => {
+    if(data.email && data.name && data.message) {
+       await account.create(ID.unique(), data.email, data.name, data.message);
+       notify();
+       reset();
+    }
   };
   return (
     <div className="min-h-screen flex items-center justify-center text-white px-4">
@@ -56,7 +61,6 @@ export default function Contact() {
               type="email"
               className="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
               placeholder="johndoe@example.com"
-              required
               {...register("email", { required: true })}
             />
             <div className="my-1">

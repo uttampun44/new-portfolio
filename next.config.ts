@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       ...config,
       watchOptions:{
          ...config.watchOptions,
-         poll: 100,
+         poll: 1000,
          aggregateTimeout: 300,
       }
    }),
