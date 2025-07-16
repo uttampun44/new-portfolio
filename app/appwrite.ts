@@ -1,6 +1,6 @@
 "use client";
 
-import { Client, Account } from "appwrite";
+import { Client, Databases } from "appwrite";
 
 export const client = new Client();
 
@@ -15,5 +15,5 @@ if (typeof window !== "undefined") {
   }
 }
 
-export const account = new Account(client);
+export const databases = new Databases(client);
 export { ID } from "appwrite";

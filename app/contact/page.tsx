@@ -1,4 +1,4 @@
-   "use client";
+"use client";
 import { Button } from "@components/ui/button";
 import { Input } from "@components/ui/input";
 import { Textarea } from "@components/ui/textarea";
@@ -6,27 +6,51 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema } from "./types/contactSchema";
-import { account, ID } from "@appwrite/appwrite";
+import { databases, ID } from "@appwrite/appwrite";
+import { useRef } from "react";
+import EmailJs from "@emailjs/browser";
 
 type tContactFormType = {
   name: string;
   email: string;
   message: string;
-}
+};
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<tContactFormType>({resolver: zodResolver(contactFormSchema)});
-  
+  } = useForm<tContactFormType>({ resolver: zodResolver(contactFormSchema) });
+
   const notify = () => toast("Message sent successfully!");
-  const onSubmit = async(data: tContactFormType) => {
-    if(data.email && data.name && data.message) {
-       await account.create(ID.unique(), data.email, data.name, data.message);
-       notify();
-       reset();
+  const onSubmit = async (data: tContactFormType) => {
+    if (data.email && data.name && data.message) {
+      await databases.createDocument(
+        process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,
+        process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID as string,
+        ID.unique(),
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }
+      );
+
+      if (formRef.current) {
+        EmailJs.sendForm(
+          "service_z02de54",
+          "mls-XN3XlB9jkl3ri",
+          formRef.current,
+          {
+            publicKey: "mls-XN3XlB9jkl3ri",
+          }
+        );
+      }
+      notify();
+      reset();
     }
   };
   return (
@@ -39,7 +63,11 @@ export default function Contact() {
           </p>
         </div>
 
-        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="space-y-6"
+          onSubmit={handleSubmit(onSubmit)}
+          ref={formRef}
+        >
           <div>
             <label className="block mb-1 text-sm">Your Name</label>
             <Input
@@ -78,11 +106,9 @@ export default function Contact() {
               placeholder="Your message..."
               {...register("message", { required: true })}
             />
-            {
-              errors.message && (
-                <p className="text-red-500 my-1">{errors.message.message}</p>
-              )
-            }
+            {errors.message && (
+              <p className="text-red-500 my-1">{errors.message.message}</p>
+            )}
           </div>
 
           <Button type="submit">Submit</Button>
