@@ -27,6 +27,7 @@ export default function Contact() {
 
   const notify = () => toast("Message sent successfully!");
   const onSubmit = async (data: tContactFormType) => {
+    
     if (data.email && data.name && data.message) {
       await databases.createDocument(
         process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,
