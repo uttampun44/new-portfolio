@@ -5,9 +5,14 @@ import { Client, Account } from "appwrite";
 export const client = new Client();
 
 if (typeof window !== "undefined") {
-  client
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT as string)
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID as string);
+  const endpoint = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
+  const project = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
+
+  if (endpoint && project) {
+    client.setEndpoint(endpoint).setProject(project);
+  } else {
+    console.warn("Appwrite environment variables are missing.");
+  }
 }
 
 export const account = new Account(client);
