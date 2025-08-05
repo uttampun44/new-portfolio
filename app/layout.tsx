@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Uttam Pun",
   description:
     "Uttam Pun | Full Stack Developer | Frontend Developer | Backend Developer",
+
 };
 
 export default function RootLayout({
@@ -49,6 +50,8 @@ export default function RootLayout({
 
         `}
         </Script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8184623531226618"
+          crossOrigin="anonymous"></script>
       </body>
     </html>
   );
