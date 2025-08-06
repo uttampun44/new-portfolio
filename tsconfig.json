@@ -23,6 +23,7 @@
      "@image/*": ["./public/assets/images/*"],
       "@data/*": ["./app/data/*"],
       "@appwrite/*": ["./app/appwrite.ts"],
+      "@lib/*": ["./lib/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "fileTransformer.js", "__mocks__/fileMock.ts", "public/firebase-messaging-sw.js"],

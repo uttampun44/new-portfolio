@@ -31,7 +31,8 @@ export const blogSlice = createSlice({
         setBlog: (state, action) => {
             state.blog = action.payload;
         }
-    }
+    },
+    
 })
 
 export const { setBlog } = blogSlice.actions;

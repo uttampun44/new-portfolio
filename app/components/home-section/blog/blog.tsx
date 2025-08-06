@@ -5,7 +5,7 @@ import { blogs } from "@data/blogtech/blogTech";
 import Image from "next/image";
 import Link from "next/link";
 import { useAppDispatch } from "../../../hooks";
-import { setBlog } from "../../../../lib/features/blogs/blog";
+import { setBlog } from "@lib/features/blogs/blog";
 
 type blogType = {
     id: number;
@@ -62,7 +62,7 @@ export default function Blogs() {
 
                 <div className="my-8 flex justify-center">
                     <Button asChild>
-                        <Link href="/blogs">View All</Link>
+                        <Link href="/blog">View All</Link>
                     </Button>
                 </div>
             </div>

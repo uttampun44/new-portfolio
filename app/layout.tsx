@@ -5,7 +5,7 @@ import Header from "@components/header";
 import Footer from "@components/footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
-import StoreProvider from "./StoreProvider";
+import Layout from "./layout/layout";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -13,8 +13,9 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Uttam Pun",
-  description:
-    "Uttam Pun | Full Stack Developer | Frontend Developer | Backend Developer",
+  description: "Uttam Pun | Full Stack Developer | Frontend Developer | Backend Developer",
+  keywords: ["Uttam Pun", "Uttam Pun | Full Stack Developer | Frontend Developer | Backend Developer"],
+  creator: "Uttam Pun",
 
 };
 
@@ -32,12 +33,10 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased bg-black bg-[url('/assets/images/BackgroundPattern.png')] bg-auto bg-top-right bg-no-repeat h-screen w-full`}
       >
-        <StoreProvider>
-          <Header />
+        <Layout>
           {children}
           <GoogleAnalytics gaId={gaId as string} />
           <GoogleTagManager gtmId={gtmId as string} />
-          <Footer />
           <Script id="tawk-to-widget" strategy="lazyOnload">
             {`
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -54,7 +53,7 @@ export default function RootLayout({
           </Script>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8184623531226618"
             crossOrigin="anonymous"></script>
-        </StoreProvider>
+        </Layout>
       </body>
     </html>
   );
