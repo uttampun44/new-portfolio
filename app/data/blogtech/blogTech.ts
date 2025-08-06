@@ -1,9 +1,22 @@
 import blogCategory from "@data/blogCategory";
 
-export const blogs = [
+
+type blogType = {
+  id: number;
+  category: string;
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  date: string;
+  author: string;
+  url: string;
+}
+export const blogs:blogType[] = [
   {
     id: 1,
     category: blogCategory[0],
+    slug: "how-to-build-a-portfolio-website",
     title: "How to build a portfolio website",
     description:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",

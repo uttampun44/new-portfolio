@@ -5,6 +5,7 @@ import Header from "@components/header";
 import Footer from "@components/footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
+import StoreProvider from "./StoreProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -31,13 +32,14 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased bg-black bg-[url('/assets/images/BackgroundPattern.png')] bg-auto bg-top-right bg-no-repeat h-screen w-full`}
       >
-        <Header />
-        {children}
-        <GoogleAnalytics gaId={gaId as string} />
-        <GoogleTagManager gtmId={gtmId as string} />
-        <Footer />
-        <Script id="tawk-to-widget" strategy="lazyOnload">
-          {`
+        <StoreProvider>
+          <Header />
+          {children}
+          <GoogleAnalytics gaId={gaId as string} />
+          <GoogleTagManager gtmId={gtmId as string} />
+          <Footer />
+          <Script id="tawk-to-widget" strategy="lazyOnload">
+            {`
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
        (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -49,9 +51,10 @@ export default function RootLayout({
      })();
 
         `}
-        </Script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8184623531226618"
-          crossOrigin="anonymous"></script>
+          </Script>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8184623531226618"
+            crossOrigin="anonymous"></script>
+        </StoreProvider>
       </body>
     </html>
   );

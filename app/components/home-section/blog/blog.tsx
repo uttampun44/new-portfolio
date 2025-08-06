@@ -1,10 +1,28 @@
+   'use client'
 import { Button } from "@components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@components/ui/card";
 import { blogs } from "@data/blogtech/blogTech";
 import Image from "next/image";
 import Link from "next/link";
+import { useAppDispatch } from "../../../hooks";
+import { setBlog } from "../../../../lib/features/blogs/blog";
+
+type blogType = {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    date: string;
+}
 
 export default function Blogs() {
+
+    const dispatch = useAppDispatch()
+
+    const handleBlog = (blog: blogType) => {
+        dispatch(setBlog(blog))
+    }
+
     return (
         <section className="py-24 px-4">
             <div
@@ -22,18 +40,22 @@ export default function Blogs() {
                 <div className="grid gap-6 sm:grid-cols-3 mt-14" data-testid="blog-grid">
                     {
                         blogs.map((blog, index) => (
-                            <Card key={index} className="bg-[#1a1a1a] border border-[#2c2c2c]">
-                                <CardHeader>
-                                    <CardTitle className="text-white">{blog.title}</CardTitle>
-                                    <CardDescription>{blog.description}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    {/* <Image src={blog.image} alt={blog.title} width={100} height={100} /> */}
-                                </CardContent>
-                                <CardFooter className="text-white">
-                                    {blog.date}
-                                </CardFooter>
-                            </Card>
+                            <Link href={`/blog/${blog.slug}`} key={index}
+                            onClick={() => handleBlog(blog)}
+                            >
+                                <Card key={index} className="bg-[#1a1a1a] border border-[#2c2c2c]">
+                                    <CardHeader>
+                                        <CardTitle className="text-white">{blog.title}</CardTitle>
+                                        <CardDescription>{blog.description}</CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        {/* <Image src={blog.image} alt={blog.title} width={100} height={100} /> */}
+                                    </CardContent>
+                                    <CardFooter className="text-white">
+                                        {blog.date}
+                                    </CardFooter>
+                                </Card>
+                            </Link>
                         ))
                     }
                 </div>
