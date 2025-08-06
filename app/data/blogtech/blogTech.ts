@@ -1,5 +1,5 @@
 import blogCategory from "@data/blogCategory";
-
+import persistImage from "@image/persist.jpg"
 
 type blogType = {
   id: number;
@@ -7,7 +7,9 @@ type blogType = {
   slug: string;
   title: string;
   description: string;
-  image: string;
+  image: {
+    src: string;
+  };
   date: string;
   author: string;
   url: string;
@@ -16,12 +18,12 @@ export const blogs:blogType[] = [
   {
     id: 1,
     category: blogCategory[0],
-    slug: "how-to-build-a-portfolio-website",
-    title: "How to build a portfolio website",
-    description:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    slug: "Redux Persist",
+    title: "Redux Persist is a state management tool that allows the state in a Redux stor",
+    description:"improving user experience by pre-loading the store with persistent data. It also offers protection against unexpected crashes and network issues, preventing data loss and offering a more reliable user experience. Redux Persist offers various configurations, including custom caching strategies, deciding which parts of the state to persist and exclude, and the storage mechanism to use. It also comes with built-in features such as migrations, transforms, and custom merges.",
+    image: persistImage,
     date:"2023-01-01",
     author:"Uttam Pun",
-    url:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    url:"https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/"
   },
 ]

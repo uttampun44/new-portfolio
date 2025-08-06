@@ -37,22 +37,23 @@ export default function Blogs() {
                         Explore Now.
                     </p>
                 </div>
-                <div className="grid gap-6 sm:grid-cols-3 mt-14" data-testid="blog-grid">
+                <div className="grid gap-6 sm:grid-cols-2 mt-14" data-testid="blog-grid">
                     {
                         blogs.map((blog, index) => (
                             <Link href={`/blog/${blog.slug}`} key={index}
+                            // @ts-ignore
                             onClick={() => handleBlog(blog)}
                             >
                                 <Card key={index} className="bg-[#1a1a1a] border border-[#2c2c2c]">
                                     <CardHeader>
-                                        <CardTitle className="text-white">{blog.title}</CardTitle>
-                                        <CardDescription>{blog.description}</CardDescription>
+                                        <CardTitle className="text-white font-bold text-lg leading-6">{blog.title}</CardTitle>
+                                        <CardDescription className="text-base font-normal leading-5">{blog.description.substring(0, 100)}...</CardDescription>
                                     </CardHeader>
                                     <CardContent>
-                                        {/* <Image src={blog.image} alt={blog.title} width={100} height={100} /> */}
+                                        <img src={blog.image.src} alt={blog.title} />
                                     </CardContent>
                                     <CardFooter className="text-white">
-                                        {blog.date}
+                                        Posted on {blog.date}
                                     </CardFooter>
                                 </Card>
                             </Link>
