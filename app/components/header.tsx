@@ -17,7 +17,7 @@ export default function Header() {
             variant="outline"
             className="bg-black text-white hover:bg-transparent hover:text-white font-medium"
           >
-            <Link href="/blog">Blog</Link>
+            <Link href="/blogs">Blog</Link>
           </Button>
           <Button
             asChild

@@ -1,6 +1,6 @@
 import blogCategory from "@data/blogCategory";
 
-export const blogTech = [
+export const blogs = [
   {
     id: 1,
     category: blogCategory[0],
