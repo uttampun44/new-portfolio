@@ -11,7 +11,9 @@ type blogType = {
     id: number;
     title: string;
     description: string;
-    image: string;
+    image: {
+        src: string;
+    };
     date: string;
 }
 
@@ -41,7 +43,6 @@ export default function Blogs() {
                     {
                         blogs.map((blog, index) => (
                             <Link href={`/blog/${blog.slug}`} key={index}
-                            // @ts-ignore
                             onClick={() => handleBlog(blog)}
                             >
                                 <Card key={index} className="bg-[#1a1a1a] border border-[#2c2c2c]">

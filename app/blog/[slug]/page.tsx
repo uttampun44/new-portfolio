@@ -5,7 +5,6 @@ import { Button } from "@components/ui/button";
 
 export default function BlogPage() {
 
-
     const blog = useAppSelector((state) => state.blog)
 
     console.log(blog)
