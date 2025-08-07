@@ -20,7 +20,7 @@ export default function Blog() {
   }
 
   return (
-    <section>
+    <section className="mt-24">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
