@@ -7,7 +7,7 @@ import {motion} from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="px-4 py-16">
+    <section className="px-4 py-16 mt-24">
       <div
         data-test-id="hero-container"
         className="hero-container max-w-[979px] mx-auto w-full text-center grid gap-8"

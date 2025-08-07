@@ -1,10 +1,21 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Header() {
+
+  const {scrollYProgress} = useScroll();
+
   return (
-    <header className="px-4 py-6 ">
-      <div className="max-w-[1168px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b-2 border-[#2c2c2c]">
+     
+      <motion.div 
+        className="h-1 bg-gradient-to-r from-red-500 to-blue-500 origin-left "
+        style={{ scaleX: scrollYProgress }}
+      />
+      
+      <div className="max-w-[1168px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 pb-7 ">
 
         <div className="text-white text-2xl font-bold text-center sm:text-left w-full sm:w-auto">
           <Link href="/">Uttam Pun</Link>
@@ -38,6 +49,7 @@ export default function Header() {
           </Button>
         </div>
       </div>
+      
     </header>
   );
 }

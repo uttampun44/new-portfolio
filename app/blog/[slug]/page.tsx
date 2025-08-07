@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { useAppSelector } from "../../hooks";
 import { Button } from "@components/ui/button";
+import Image from "next/image";
 
 export default function BlogPage() {
 
     const blog = useAppSelector((state) => state.blog)
 
-    console.log(blog)
     return (
         <section>
             <div className="container mx-auto px-4 py-24 sm:px-6 lg:px-8">
@@ -15,8 +15,13 @@ export default function BlogPage() {
                 <h1 className="text-white my-8 text-5xl">{blog.title}</h1>
                 <div className="image flex justify-center">
                     <picture>
-                        <img src={blog.image.src} alt={blog.title}
-                            className="min-w-fit w-full h-auto rounded-lg object-contain"
+                       <Image
+                            src={blog.image}
+                            alt="blog"
+                            width={600}
+                            height={400}
+                            className="rounded-lg"
+                            loading="lazy"
                         />
                     </picture>
                 </div>
